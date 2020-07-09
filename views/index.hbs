@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <img src="app_meetup_logo.png" alt="meetup_logo" class="card-img-top">
+            <div class="card-body">
+                <h2>30€</h2>
+                <p>
+                    Buy our best Meetups quickly and easily
+                </p>
+            </div>
+            <div class="card-footer">
+                <form action="/checkout" method="POST">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        {{!-- Llave publica que te da Stripe cuando te logeas --}}
+                        data-key="pk_test_51GuukdBytFFQ2wtX949nR3aoGCejIdwsqDV2XlXMxh6hb47ZieUX22NtV578IMnw6pYM8KGCgqqBL769UgpWxR6l00vcM6P4Uf" 
+                        {{!-- Este es el cargo o dineero a pagar . Va en centavos de dolar o centavos de euro .
+                        En el ejemplo 3000 centavos de dolar serian 30 dolares --}} 
+                        data-amount="3000"
+                        data-currency="EUR"
+                        data-name="Meetup Product" 
+                        data-description="Widget"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto">
+                        </script>
+                        {{!-- Test de Stripe . Utilizar este enlace (Tarjetas de prueba ...)
+                        https://stripe.com/docs/testing --}}
+                    <script>
+                        document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                    </script>
+                    <button class="btn btn-dark btn-block">
+                        Buy <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
