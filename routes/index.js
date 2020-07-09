@@ -2,7 +2,7 @@
 // Es necesario pegar la clave secreta que genera stripe a partir de la clave publica
 // Esta clave se encuentra en nuestro dashboard de stripe 
 
-const stripe = require('stripe')('sk_test_51GuukdBytFFQ2wtX3xXnhWdWkbmQtZKSytcpZ49w9gN3QRFjrPynKTndDY6Wp9WwGdRSSP5G6qfgfIl9tieHyWbT00bfZLZzPH');
+const stripe = require('stripe')(process.env.SECRET_KEY_STRIPE);
 
 // Defining router
 

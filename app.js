@@ -1,3 +1,5 @@
+// Imports
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -6,6 +8,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const logger = require('./utilities/logger');
 const exphbs = require ('express-handlebars');
+require('dotenv').config()
 
 // Ficheros con los endpoints
 const commentsRouter = require('./routes/comments');
@@ -18,6 +21,7 @@ const reservationsRouter = require('./routes/reservations');
 const indexRouter = require('./routes/index');
 
 const app = express();
+
 app.set('views', path.join(__dirname, 'views'));
 
 // Settings
